@@ -25,20 +25,10 @@ public class CourseServiceImpl {
         return ResponseEntity.ok(status);
     }
 
-    public ResponseEntity<?> updateProduct(Course course) {
-        Boolean status = courseDAOImpl.updateCourse(course);
-        return ResponseEntity.ok(status);
-    }
-
     public ResponseEntity<?> deleteCourse(Course course) {
         Boolean isCourseDeleted = courseDAOImpl.deleteCourse(course);
         Map map = new HashMap();
         map.put("Deleted", isCourseDeleted);
         return ResponseEntity.ok(map);
-    }
-
-    public ResponseEntity<?> patchProduct(Course course) {
-        String status = courseDAOImpl.saveCourse(course);
-        return ResponseEntity.ok(status);
     }
 }
